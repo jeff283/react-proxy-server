@@ -1,13 +1,13 @@
 from flask import Flask, jsonify
 import requests
-from flask_cors import CORS
+from flask_cors import cross_origin
 
 app = Flask(__name__)
-CORS(app)
 
 
 
 @app.route("/")
+@cross_origin(["https://linver-dict.netlify.app"])
 def index():
     return "Welcome, this Proxy Server"
 
